@@ -24,14 +24,10 @@ class LogInViewController: UIViewController {
         return imageView
     }()
     
-    private let emailTextField = CustomTextField(placeholder: "Email")
+    private let emailTextField = CustomTextField(placeholder: "Email", isSecureTextEntry: false)
 
-    private let passwordTextField: CustomTextField = {
-        let tf = CustomTextField(placeholder: "Password")
-        tf.isSecureTextEntry = true
-        return tf
-    }()
-    
+    private let passwordTextField = CustomTextField(placeholder: "Password", isSecureTextEntry: true)
+        
     private lazy var emailContainerView = InputContainerView(image:#imageLiteral(resourceName: "Envelope"), textField: emailTextField)
 
     private lazy var passwordContainerView = InputContainerView(image: #imageLiteral(resourceName: "Lock"), textField: passwordTextField)
@@ -53,7 +49,7 @@ class LogInViewController: UIViewController {
         button.setTitle("Log In", for: .normal)
         button.layer.cornerRadius = 5.0
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.backgroundColor = .systemGray
+        button.backgroundColor = .systemGreen
         button.setTitleColor(.white, for: .normal)
         button.setHeight(height: 50.0)
         button.isEnabled = false
@@ -69,7 +65,6 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureGradientLayer()
         configureUI()
     }
     
@@ -97,6 +92,8 @@ class LogInViewController: UIViewController {
     // MARK: Helper Functions
     private func configureUI() {
         
+        configureGradientLayer()
+        
         view.addSubview(clouds)
         clouds.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 300)
                 
@@ -109,6 +106,10 @@ class LogInViewController: UIViewController {
         stackView.anchor(top: clouds.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
                      paddingTop: 32, paddingLeft: 32, paddingRight: 32)
         
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        
         view.addSubview(forgotPassword)
         forgotPassword.anchor(top: stackView.bottomAnchor, right: view.rightAnchor, paddingTop: 12, paddingRight: 32)
         
@@ -116,8 +117,6 @@ class LogInViewController: UIViewController {
         logInButton.anchor(top: forgotPassword.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
                            paddingTop: 32, paddingLeft: 32, paddingRight: 32)
         
-        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 }
 
@@ -128,7 +127,7 @@ extension LogInViewController: AuthenticationControllerProtocol {
             logInButton.backgroundColor = .systemBlue
         } else {
             logInButton.isEnabled = false
-            logInButton.backgroundColor = .systemGray
+            logInButton.backgroundColor = .systemGreen
         }
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class CustomTextField: UITextField {
     
-    init(placeholder: String) {
+    init(placeholder: String, isSecureTextEntry: Bool) {
         super.init(frame: .zero)
         
         borderStyle = .none
@@ -19,6 +19,7 @@ class CustomTextField: UITextField {
         keyboardAppearance = .dark
         attributedPlaceholder = NSAttributedString(string: placeholder,
                                                    attributes: [.foregroundColor : UIColor.white])
+        self.isSecureTextEntry = isSecureTextEntry
     }
     
     required init?(coder: NSCoder) {
