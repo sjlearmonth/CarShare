@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 extension UIView {
     
@@ -83,11 +84,33 @@ extension UIView {
 
 extension UIViewController {
 
+    static let hud = JGProgressHUD(style: .dark)
+    
     func configureGradientLayer() {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.systemBlue.cgColor, UIColor.systemGreen.cgColor]
         gradient.locations = [0, 1]
         view.layer.addSublayer(gradient)
         gradient.frame = view.frame
+    }
+    
+    func showLoader(_ show: Bool, withText text: String? = "Loading") {
+        
+        // Dismiss keyboard
+        view.endEditing(true)
+        
+        UIViewController.hud.textLabel.text = text
+        
+        if show {
+            UIViewController.hud.show(in: view)
+        } else {
+            UIViewController.hud.dismiss()
+        }
+    }
+    
+    func showError(_ errorMessage: String) {
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
