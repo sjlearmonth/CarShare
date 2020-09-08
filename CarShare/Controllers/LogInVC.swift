@@ -1,5 +1,5 @@
 //
-//  LogInViewController.swift
+//  LogInVC.swift
 //  CarShare
 //
 //  Created by Stephen Learmonth on 07/09/2020.
@@ -13,7 +13,7 @@ import JGProgressHUD
 protocol AuthenticationControllerProtocol {
     func checkFormStatus()
 }
-class LogInViewController: UIViewController {
+class LogInVC: UIViewController {
 
     // MARK: - Properties
     
@@ -24,6 +24,28 @@ class LogInViewController: UIViewController {
         imageView.image = UIImage(named: "Clouds")
         imageView.contentMode = .scaleAspectFill
         return imageView
+    }()
+    
+    private lazy var titleLabelView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemGreen
+        view.addSubview(titleLabel)
+        titleLabel.centerX(inView: view)
+        titleLabel.centerY(inView: view, constant: 10)
+        view.setHeight(height: 60)
+        view.setWidth(width: 300)
+        view.layer.cornerRadius = 60 / 2
+        return view
+    }()
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Car Share"
+        label.font = UIFont(name: "Rockwell", size: 50)
+        label.setHeight(height: 60)
+        label.backgroundColor = .clear
+        label.textColor = .systemYellow
+        return label
     }()
     
     private let emailTextField = CustomTextField(placeholder: "Email", isSecureTextEntry: false)
@@ -113,6 +135,10 @@ class LogInViewController: UIViewController {
         
         view.addSubview(clouds)
         clouds.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor, height: 300)
+        
+        view.addSubview(titleLabelView)
+        titleLabelView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 75, width: 300, height: 60)
+        titleLabelView.centerX(inView: view)
                 
         let stackView = UIStackView(arrangedSubviews: [emailContainerView,
                                                        passwordContainerView])
@@ -137,7 +163,7 @@ class LogInViewController: UIViewController {
     }
 }
 
-extension LogInViewController: AuthenticationControllerProtocol {
+extension LogInVC: AuthenticationControllerProtocol {
     func checkFormStatus() {
         if viewModel.formIsValid {
             logInButton.isEnabled = true
