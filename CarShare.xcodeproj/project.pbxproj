@@ -21,11 +21,13 @@
 		C46A81402506A3D2009FBA5A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A813F2506A3D2009FBA5A /* AuthService.swift */; };
 		C46A81422506A4C7009FBA5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C46A81412506A4C7009FBA5A /* GoogleService-Info.plist */; };
 		C4F184D92507D9B900E32E4B /* HomeTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184D82507D9B900E32E4B /* HomeTBC.swift */; };
-		C4F184DB2507DAC100E32E4B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184DA2507DAC100E32E4B /* HomeVC.swift */; };
+		C4F184DB2507DAC100E32E4B /* HomeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184DA2507DAC100E32E4B /* HomeTVC.swift */; };
 		C4F184DD2507DB1D00E32E4B /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184DC2507DB1D00E32E4B /* GroupsVC.swift */; };
 		C4F184DF2507DB4000E32E4B /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184DE2507DB4000E32E4B /* ChatVC.swift */; };
 		C4F184E12507DB5300E32E4B /* ActiveOffersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184E02507DB5300E32E4B /* ActiveOffersVC.swift */; };
 		C4F184E32507DB6100E32E4B /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184E22507DB6100E32E4B /* MoreVC.swift */; };
+		C4F184EC250A9B5500E32E4B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184EB250A9B5500E32E4B /* HeaderView.swift */; };
+		C4F184EE250AA44F00E32E4B /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184ED250AA44F00E32E4B /* FooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,11 +48,13 @@
 		C46A813F2506A3D2009FBA5A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		C46A81412506A4C7009FBA5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C4F184D82507D9B900E32E4B /* HomeTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTBC.swift; sourceTree = "<group>"; };
-		C4F184DA2507DAC100E32E4B /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		C4F184DA2507DAC100E32E4B /* HomeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTVC.swift; sourceTree = "<group>"; };
 		C4F184DC2507DB1D00E32E4B /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
 		C4F184DE2507DB4000E32E4B /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		C4F184E02507DB5300E32E4B /* ActiveOffersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveOffersVC.swift; sourceTree = "<group>"; };
 		C4F184E22507DB6100E32E4B /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
+		C4F184EB250A9B5500E32E4B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		C4F184ED250AA44F00E32E4B /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		C607C1E449A3034276746631 /* Pods-CarShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarShare.release.xcconfig"; path = "Target Support Files/Pods-CarShare/Pods-CarShare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +121,7 @@
 			children = (
 				C46A813125067AE9009FBA5A /* LogInVC.swift */,
 				C4F184D82507D9B900E32E4B /* HomeTBC.swift */,
-				C4F184DA2507DAC100E32E4B /* HomeVC.swift */,
+				C4F184DA2507DAC100E32E4B /* HomeTVC.swift */,
 				C4F184DC2507DB1D00E32E4B /* GroupsVC.swift */,
 				C4F184DE2507DB4000E32E4B /* ChatVC.swift */,
 				C4F184E02507DB5300E32E4B /* ActiveOffersVC.swift */,
@@ -131,6 +135,8 @@
 			children = (
 				C46A813625068E92009FBA5A /* CustomTextField.swift */,
 				C46A813825068EDB009FBA5A /* InputContainerView.swift */,
+				C4F184EB250A9B5500E32E4B /* HeaderView.swift */,
+				C4F184ED250AA44F00E32E4B /* FooterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,14 +299,16 @@
 			files = (
 				C4F184DF2507DB4000E32E4B /* ChatVC.swift in Sources */,
 				C46A813525067BB9009FBA5A /* Extensions.swift in Sources */,
-				C4F184DB2507DAC100E32E4B /* HomeVC.swift in Sources */,
+				C4F184DB2507DAC100E32E4B /* HomeTVC.swift in Sources */,
 				C4F184E32507DB6100E32E4B /* MoreVC.swift in Sources */,
 				C46A813225067AE9009FBA5A /* LogInVC.swift in Sources */,
+				C4F184EE250AA44F00E32E4B /* FooterView.swift in Sources */,
 				C46A813925068EDB009FBA5A /* InputContainerView.swift in Sources */,
 				C46A81402506A3D2009FBA5A /* AuthService.swift in Sources */,
 				C46A813725068E92009FBA5A /* CustomTextField.swift in Sources */,
 				C4F184D92507D9B900E32E4B /* HomeTBC.swift in Sources */,
 				C46A813C250695D1009FBA5A /* LogInViewModel.swift in Sources */,
+				C4F184EC250A9B5500E32E4B /* HeaderView.swift in Sources */,
 				C46A811B25067A03009FBA5A /* AppDelegate.swift in Sources */,
 				C4F184DD2507DB1D00E32E4B /* GroupsVC.swift in Sources */,
 				C46A811D25067A03009FBA5A /* SceneDelegate.swift in Sources */,

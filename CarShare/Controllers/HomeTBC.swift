@@ -17,8 +17,12 @@ class HomeTBC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let homeVC = HomeVC()
-        homeVC.tabBarItem = .init(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
+        let homeNav = UINavigationController(rootViewController: HomeTVC())
+        homeNav.navigationBar.prefersLargeTitles = true
+        homeNav.navigationBar.topItem?.title = "Home"
+        homeNav.navigationBar.barStyle = .black
+        homeNav.navigationBar.backgroundColor = .systemGreen
+        homeNav.tabBarItem = .init(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
         
         let groupsVC = GroupsVC()
         groupsVC.tabBarItem = .init(title: "Groups", image: UIImage(systemName: "person.3.fill"), tag: 1)
@@ -32,7 +36,7 @@ class HomeTBC: UITabBarController {
         let moreVC = MoreVC()
         moreVC.tabBarItem = .init(title: "More", image: UIImage(systemName: "plus.app.fill"), tag: 4)
 
-        let tabBarItems = [homeVC, groupsVC, chatVC, activeOffersVC, moreVC]
+        let tabBarItems = [homeNav, groupsVC, chatVC, activeOffersVC, moreVC]
         viewControllers = tabBarItems
     }
     
