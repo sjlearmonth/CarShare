@@ -16,10 +16,10 @@ class FooterView: UIView {
         let button = UIButton(type: .system)
         button.setTitle("Find A Lift", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = .systemGreen
         button.setTitleColor(.white, for: .normal)
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.layer.cornerRadius = 25
+        button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(handleFindALift), for: .touchUpInside)
         return button
     }()
@@ -28,10 +28,10 @@ class FooterView: UIView {
         let button = UIButton(type: .system)
         button.setTitle("Offer A Lift", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = .systemGreen
         button.setTitleColor(.white, for: .normal)
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.layer.cornerRadius = 25
+        button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(handleOfferALift), for: .touchUpInside)
         return button
     }()
@@ -40,7 +40,7 @@ class FooterView: UIView {
         let stackView = UIStackView(arrangedSubviews: [findALiftButton, offerALiftButton])
         stackView.axis = .vertical
         stackView.spacing = 20
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         return stackView
     }()
 
@@ -71,7 +71,7 @@ class FooterView: UIView {
     private func configureUI() {
         
         self.addSubview(buttonsStackView)
-        buttonsStackView.centerX(inView: self)
+        buttonsStackView.centerY(inView: self)
         buttonsStackView.anchor(left: leftAnchor, right: rightAnchor,
                                 paddingLeft: 32, paddingRight: 32)
     }

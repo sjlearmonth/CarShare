@@ -16,6 +16,8 @@ class HeaderView: UIView {
         let hiv = UIImageView()
         hiv.image = UIImage(named: "Stephen")
         hiv.contentMode = .scaleAspectFill
+        hiv.clipsToBounds = true
+        hiv.setHeight(height: 180)
         return hiv
     }()
     
@@ -42,14 +44,23 @@ class HeaderView: UIView {
     // MARK: - Helper Functions
     
     private func configureUI() {
+        
         self.addSubview(headerImageView)
         headerImageView.anchor(top: safeAreaLayoutGuide.topAnchor, left: leftAnchor,
                                bottom: bottomAnchor, right: rightAnchor,
-                               paddingTop: 40, paddingLeft: 0,
+                               paddingTop: 0, paddingLeft: 0,
                                paddingBottom: 0, paddingRight: 0)
         
         self.addSubview(headerLabel)
         headerLabel.anchor(left: leftAnchor, bottom: bottomAnchor,
-                           paddingLeft: 12, paddingBottom: -80)
+                           paddingLeft: 12, paddingBottom: 30)
+        
+        
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.clear.cgColor , UIColor.black.cgColor]
+        gradient.locations = [0.85, 1]
+        self.layer.addSublayer(gradient)
+        gradient.frame = self.frame
+
     }
 }

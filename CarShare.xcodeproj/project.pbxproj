@@ -28,6 +28,7 @@
 		C4F184E32507DB6100E32E4B /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184E22507DB6100E32E4B /* MoreVC.swift */; };
 		C4F184EC250A9B5500E32E4B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184EB250A9B5500E32E4B /* HeaderView.swift */; };
 		C4F184EE250AA44F00E32E4B /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184ED250AA44F00E32E4B /* FooterView.swift */; };
+		C4FE554F250BC4C20000A48B /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FE554E250BC4C20000A48B /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		C4F184E22507DB6100E32E4B /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		C4F184EB250A9B5500E32E4B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		C4F184ED250AA44F00E32E4B /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		C4FE554E250BC4C20000A48B /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		C607C1E449A3034276746631 /* Pods-CarShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarShare.release.xcconfig"; path = "Target Support Files/Pods-CarShare/Pods-CarShare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 		C46A811925067A03009FBA5A /* CarShare */ = {
 			isa = PBXGroup;
 			children = (
+				C4FE554D250BC3320000A48B /* Cells */,
 				C46A813E2506A3C2009FBA5A /* API */,
 				C46A813A250695B6009FBA5A /* ViewModels */,
 				C46A813325067B92009FBA5A /* Utilities */,
@@ -170,6 +173,14 @@
 				C46A813F2506A3D2009FBA5A /* AuthService.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		C4FE554D250BC3320000A48B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C4FE554E250BC4C20000A48B /* HomeTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		E31345B335360699156FDAF1 /* Pods */ = {
@@ -312,6 +323,7 @@
 				C46A811B25067A03009FBA5A /* AppDelegate.swift in Sources */,
 				C4F184DD2507DB1D00E32E4B /* GroupsVC.swift in Sources */,
 				C46A811D25067A03009FBA5A /* SceneDelegate.swift in Sources */,
+				C4FE554F250BC4C20000A48B /* HomeTableViewCell.swift in Sources */,
 				C4F184E12507DB5300E32E4B /* ActiveOffersVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
