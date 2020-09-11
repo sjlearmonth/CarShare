@@ -29,6 +29,8 @@
 		C4F184EC250A9B5500E32E4B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184EB250A9B5500E32E4B /* HeaderView.swift */; };
 		C4F184EE250AA44F00E32E4B /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184ED250AA44F00E32E4B /* FooterView.swift */; };
 		C4FE554F250BC4C20000A48B /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FE554E250BC4C20000A48B /* HomeTableViewCell.swift */; };
+		C4FE5551250BCEAD0000A48B /* FindALiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FE5550250BCEAD0000A48B /* FindALiftVC.swift */; };
+		C4FE5558250BEF4E0000A48B /* DateAndTimeSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FE5557250BEF4E0000A48B /* DateAndTimeSelectorVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		C4F184EB250A9B5500E32E4B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		C4F184ED250AA44F00E32E4B /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		C4FE554E250BC4C20000A48B /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		C4FE5550250BCEAD0000A48B /* FindALiftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindALiftVC.swift; sourceTree = "<group>"; };
+		C4FE5557250BEF4E0000A48B /* DateAndTimeSelectorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTimeSelectorVC.swift; sourceTree = "<group>"; };
 		C607C1E449A3034276746631 /* Pods-CarShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarShare.release.xcconfig"; path = "Target Support Files/Pods-CarShare/Pods-CarShare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +133,7 @@
 				C4F184DE2507DB4000E32E4B /* ChatVC.swift */,
 				C4F184E02507DB5300E32E4B /* ActiveOffersVC.swift */,
 				C4F184E22507DB6100E32E4B /* MoreVC.swift */,
+				C4FE5550250BCEAD0000A48B /* FindALiftVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				C46A813825068EDB009FBA5A /* InputContainerView.swift */,
 				C4F184EB250A9B5500E32E4B /* HeaderView.swift */,
 				C4F184ED250AA44F00E32E4B /* FooterView.swift */,
+				C4FE5557250BEF4E0000A48B /* DateAndTimeSelectorVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,11 +323,13 @@
 				C46A813925068EDB009FBA5A /* InputContainerView.swift in Sources */,
 				C46A81402506A3D2009FBA5A /* AuthService.swift in Sources */,
 				C46A813725068E92009FBA5A /* CustomTextField.swift in Sources */,
+				C4FE5558250BEF4E0000A48B /* DateAndTimeSelectorVC.swift in Sources */,
 				C4F184D92507D9B900E32E4B /* HomeTBC.swift in Sources */,
 				C46A813C250695D1009FBA5A /* LogInViewModel.swift in Sources */,
 				C4F184EC250A9B5500E32E4B /* HeaderView.swift in Sources */,
 				C46A811B25067A03009FBA5A /* AppDelegate.swift in Sources */,
 				C4F184DD2507DB1D00E32E4B /* GroupsVC.swift in Sources */,
+				C4FE5551250BCEAD0000A48B /* FindALiftVC.swift in Sources */,
 				C46A811D25067A03009FBA5A /* SceneDelegate.swift in Sources */,
 				C4FE554F250BC4C20000A48B /* HomeTableViewCell.swift in Sources */,
 				C4F184E12507DB5300E32E4B /* ActiveOffersVC.swift in Sources */,

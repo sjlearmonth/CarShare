@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol FooterViewDelegate: class {
+    func handleFindALift()
+}
+
 class FooterView: UIView {
 
     // MARK: - Properties
+    
+    weak var delegate: FooterViewDelegate?
     
     private let findALiftButton: UIButton = {
         let button = UIButton(type: .system)
@@ -60,6 +66,7 @@ class FooterView: UIView {
     
     @objc func handleFindALift() {
         print("DEBUG: Find A Lift Clicked ")
+        delegate?.handleFindALift()
     }
     
     @objc func handleOfferALift() {

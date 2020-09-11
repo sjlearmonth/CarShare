@@ -24,7 +24,9 @@ class HomeTVC: UITableViewController {
         tableView.rowHeight = 45
         tableView.backgroundColor = .black
         tableView.tableHeaderView = HeaderView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 350))
-        tableView.tableFooterView = FooterView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 160))
+        let footerView = FooterView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 160))
+        tableView.tableFooterView = footerView
+        footerView.delegate = self
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: cellID)
     }
     
@@ -41,4 +43,13 @@ class HomeTVC: UITableViewController {
         
         return cell
     }
+}
+
+extension HomeTVC: FooterViewDelegate {
+    func handleFindALift() {
+        let controller = FindALiftVC()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
 }
