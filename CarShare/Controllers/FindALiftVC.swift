@@ -12,34 +12,11 @@ class FindALiftVC: UIViewController {
 
     // MARK: - Properties
     
-    private lazy var startingPointTextField: UITextField = {
-        let tf = UITextField()
-        tf.backgroundColor = .clear
-        tf.textColor = .white
-        tf.font = UIFont.systemFont(ofSize: 18)
-        tf.attributedPlaceholder = NSAttributedString(string: "Starting Point", attributes: [NSAttributedString.Key.foregroundColor : UIColor.init(red: 0.25, green: 0.25, blue: 0.25, alpha: 1)])
-        tf.addTarget(self, action: #selector(clearStartingPointTextField), for: .editingDidBegin)
-        return tf
-    }()
+    private lazy var startingPointTextField = createCustomTextField(target: self, placeholder: "Starting Point", selector: #selector(clearStartingPointTextField))
     
-    private let destinationTextField: UITextField = {
-        let tf = UITextField()
-        tf.backgroundColor = .clear
-        tf.textColor = .white
-        tf.font = UIFont.systemFont(ofSize: 18)
-        tf.attributedPlaceholder = NSAttributedString(string: "Destination", attributes: [NSAttributedString.Key.foregroundColor : UIColor.init(red: 0.25, green: 0.25, blue: 0.25, alpha: 1)])
-        tf.addTarget(self, action: #selector(clearDestinationTextField), for: .editingDidBegin)
-        return tf
-    }()
+    private lazy var destinationTextField = createCustomTextField(target: self, placeholder: "Destination", selector: #selector(clearDestinationTextField))
     
-    private let dateAndTimeTextField: UITextField = {
-        let tf = UITextField()
-        tf.textColor = .white
-        tf.font = UIFont.systemFont(ofSize: 18)
-        tf.attributedPlaceholder = NSAttributedString(string: "Enter date and time", attributes: [NSAttributedString.Key.foregroundColor : UIColor.init(red: 0.25, green: 0.25, blue: 0.25, alpha: 1)])
-        tf.addTarget(self, action: #selector(clearDateAndTimeTextField), for: .editingDidBegin)
-        return tf
-    }()
+    private lazy var dateAndTimeTextField = createCustomTextField(target: self, placeholder: "12/09/2020 15:01 hrs", selector: #selector(clearDateAndTimeTextField))
     
     private let groupLabel: UILabel = {
         let label = UILabel()
@@ -50,12 +27,22 @@ class FindALiftVC: UIViewController {
         return label
     }()
     
+    private lazy var dateAndTime: DateAndTimeSelectorView = {
+        let dt = DateAndTimeSelectorView()
+        dt.setWidth(width: 350)
+        dt.setHeight(height: 450)
+        return dt
+    }()
+
+        
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
+        
+        dateAndTime.delegate = self
 
     }
 
@@ -71,7 +58,10 @@ class FindALiftVC: UIViewController {
     }
 
     @objc func clearDateAndTimeTextField() {
-        
+        view.addSubview(dateAndTime)
+        dateAndTime.centerY(inView: view)
+        dateAndTime.centerX(inView: view)
+        print("DEBUG: date and time")
     }
     
     // MARK: Helper Functions
@@ -93,21 +83,34 @@ class FindALiftVC: UIViewController {
                          left: view.leftAnchor,
                          right: view.rightAnchor,
                          paddingTop: 32, paddingLeft: 16, paddingRight: 16, height: 200)
-        
-        view.addSubview(dateAndTimeView)
-        
-        
+
     }
     
-//    @objc private func createCustomTextField(target: Any?,placeholder: String, selector: Selector) -> UITextField {
-//        let tf = UITextField()
-//        tf.backgroundColor = .clear
-//        tf.textColor = .white
-//        tf.font = UIFont.systemFont(ofSize: 18)
-//        tf.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor : UIColor.init(red: 0.25, green: 0.25, blue: 0.25, alpha: 1)])
-//        tf.addTarget(self, action: #selector(selector), for: .editingDidBegin)
-//
-//        return tf
-//
-//    }
+    @objc private func createCustomTextField(target: Any?,placeholder: String, selector: Selector) -> UITextField {
+        let tf = UITextField()
+        tf.backgroundColor = .clear
+        tf.textColor = .white
+        tf.font = UIFont.systemFont(ofSize: 18)
+        tf.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor : UIColor.init(red: 0.25, green: 0.25, blue: 0.25, alpha: 1)])
+        tf.addTarget(self, action: selector, for: .editingDidBegin)
+
+        return tf
+
+    }
+}
+
+extension FindALiftVC: DateAndTimeDelegate {
+    func readDateAndTimeSelected(date: Date, time: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_GB")
+        dateFormatter.setLocalizedDateFormatFromTemplate("dd/MM/YYYY")
+        let dateString = dateFormatter.string(from: date)
+        dateFormatter.setLocalizedDateFormatFromTemplate("HH:mm")
+        let timeString = dateFormatter.string(from: time)
+        let dataAndTime = dateString + ", " + timeString + " hrs"
+        dateAndTimeTextField.text = dataAndTime
+
+    }
+    
+
 }
