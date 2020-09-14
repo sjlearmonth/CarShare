@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		761D323324CA16062BA228AD /* Pods_CarShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5002D79306199FAE2F13EC /* Pods_CarShare.framework */; };
+		C42CFAEB250FC97100EE1C9B /* GroupSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42CFAEA250FC97100EE1C9B /* GroupSelectionTableViewCell.swift */; };
+		C42CFAED250FCC6200EE1C9B /* GroupSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42CFAEC250FCC6200EE1C9B /* GroupSelectionView.swift */; };
 		C46A811B25067A03009FBA5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A811A25067A03009FBA5A /* AppDelegate.swift */; };
 		C46A811D25067A03009FBA5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46A811C25067A03009FBA5A /* SceneDelegate.swift */; };
 		C46A812225067A03009FBA5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46A812025067A03009FBA5A /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		7893D20BE5C1296E77A9684F /* Pods-CarShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarShare.debug.xcconfig"; path = "Target Support Files/Pods-CarShare/Pods-CarShare.debug.xcconfig"; sourceTree = "<group>"; };
 		BE5002D79306199FAE2F13EC /* Pods_CarShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C42CFAEA250FC97100EE1C9B /* GroupSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		C42CFAEC250FCC6200EE1C9B /* GroupSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSelectionView.swift; sourceTree = "<group>"; };
 		C46A811725067A03009FBA5A /* CarShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C46A811A25067A03009FBA5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C46A811C25067A03009FBA5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				C4F184EB250A9B5500E32E4B /* HeaderView.swift */,
 				C4F184ED250AA44F00E32E4B /* FooterView.swift */,
 				C4FE5557250BEF4E0000A48B /* DateAndTimeSelectorView.swift */,
+				C42CFAEC250FCC6200EE1C9B /* GroupSelectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				C4FE554E250BC4C20000A48B /* HomeTableViewCell.swift */,
+				C42CFAEA250FC97100EE1C9B /* GroupSelectionTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4F184DF2507DB4000E32E4B /* ChatVC.swift in Sources */,
+				C42CFAEB250FC97100EE1C9B /* GroupSelectionTableViewCell.swift in Sources */,
 				C46A813525067BB9009FBA5A /* Extensions.swift in Sources */,
 				C4F184DB2507DAC100E32E4B /* HomeTVC.swift in Sources */,
 				C4F184E32507DB6100E32E4B /* MoreVC.swift in Sources */,
@@ -322,6 +329,7 @@
 				C4F184EE250AA44F00E32E4B /* FooterView.swift in Sources */,
 				C46A813925068EDB009FBA5A /* InputContainerView.swift in Sources */,
 				C46A81402506A3D2009FBA5A /* AuthService.swift in Sources */,
+				C42CFAED250FCC6200EE1C9B /* GroupSelectionView.swift in Sources */,
 				C46A813725068E92009FBA5A /* CustomTextField.swift in Sources */,
 				C4FE5558250BEF4E0000A48B /* DateAndTimeSelectorView.swift in Sources */,
 				C4F184D92507D9B900E32E4B /* HomeTBC.swift in Sources */,
