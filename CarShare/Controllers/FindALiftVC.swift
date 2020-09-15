@@ -12,11 +12,11 @@ class FindALiftVC: UIViewController {
 
     // MARK: - Properties
     
-    private lazy var startingPointTextField = createCustomTextField(target: self, placeholder: "Starting Point", selector: #selector(clearStartingPointTextField), event: .editingDidBegin)
+    private lazy var startingPointTextField = createCustomTextField(target: self, placeholder: "Starting Point", selector: #selector(clearStartingPointTextField), event: .allTouchEvents)
     
-    private lazy var destinationTextField = createCustomTextField(target: self, placeholder: "Destination", selector: #selector(clearDestinationTextField), event: .editingDidBegin)
+    private lazy var destinationTextField = createCustomTextField(target: self, placeholder: "Destination", selector: #selector(clearDestinationTextField), event: .allTouchEvents)
     
-    private lazy var dateAndTimeTextField = createCustomTextField(target: self, placeholder: "12/09/2020 15:01 hrs", selector: #selector(clearDateAndTimeTextField), event: .allEditingEvents)
+    private lazy var dateAndTimeTextField = createCustomTextField(target: self, placeholder: "12/09/2020 15:01 hrs", selector: #selector(clearDateAndTimeTextField), event: .allTouchEvents)
     
     private lazy var dateAndTime: DateAndTimeSelectorView = {
         let dt = DateAndTimeSelectorView()
@@ -38,10 +38,9 @@ class FindALiftVC: UIViewController {
         let label = UILabel()
         label.text = "None"
         label.textColor = .white
-        label.backgroundColor = .lightGray
+        label.backgroundColor = .clear
         label.font = UIFont.systemFont(ofSize: 18)
         label.setHeight(height: 50)
-        label.setWidth(width: 200)
         label.isUserInteractionEnabled = true
         
         var tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -53,7 +52,18 @@ class FindALiftVC: UIViewController {
         return label
     }()
     
-    private lazy var groupSelectionView = GroupSelectionView()
+    private let submitButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("SUBMIT", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemGreen
+        button.setHeight(height: 50)
+        button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(handleSubmit), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var groupSelectionView = GroupSelectionTV()
     
     // MARK: - LifeCycle
     
@@ -79,12 +89,28 @@ class FindALiftVC: UIViewController {
         view.addSubview(dateAndTime)
         dateAndTime.centerY(inView: view)
         dateAndTime.centerX(inView: view)
+        print("DEBUG: -------------------------> Got here 2")
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        view.addSubview(groupSelectionView)
-        groupSelectionView.centerY(inView: view)
-        groupSelectionView.centerX(inView: view)
+        let controller = GroupSelectionTVC()
+        controller.modalPresentationStyle = .popover
+        controller.modalTransitionStyle = .crossDissolve
+        controller.title = "Group"
+        controller.delegate = self
+        navigationController?.pushViewController(controller, animated: true)
+//        view.addSubview(groupSelectionView)
+//        groupSelectionView.centerY(inView: view)
+//        groupSelectionView.centerX(inView: view)
+    }
+    
+    @objc func handleSubmit() {
+        let controller = SearchResultsVC()
+        controller.modalPresentationStyle = .popover
+        controller.modalTransitionStyle = .crossDissolve
+        controller.title = "Search Results"
+        navigationController?.pushViewController(controller, animated: true)
+
     }
     
     // MARK: Helper Functions
@@ -109,7 +135,12 @@ class FindALiftVC: UIViewController {
 
         view.addSubview(selectedGroupLabel)
         selectedGroupLabel.anchor(top: stackView.bottomAnchor, left: view.leftAnchor,
-                                  paddingTop: 18, paddingLeft: 24)
+                                  paddingTop: 5, paddingLeft: 24)
+        
+        view.addSubview(submitButton)
+        submitButton.anchor(top: selectedGroupLabel.bottomAnchor, left: view.leftAnchor,
+                            right: view.rightAnchor, paddingTop: 16, paddingLeft: 32,
+                            paddingRight: 32)
     }
     
     @objc private func createCustomTextField(target: Any?,placeholder: String, selector: Selector, event: UIControl.Event) -> UITextField {
@@ -134,6 +165,14 @@ extension FindALiftVC: DateAndTimeDelegate {
         let dataAndTimeString = dateString + ", " + timeString + " hrs"
         dateAndTimeTextField.text = dataAndTimeString
 
+    }
+    
+
+}
+
+extension FindALiftVC: GroupSelectionDelegate {
+    func fetchSelectedGroup(selectedGroup: String) {
+        selectedGroupLabel.text = selectedGroup
     }
     
 

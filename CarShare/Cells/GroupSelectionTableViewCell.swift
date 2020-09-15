@@ -14,7 +14,6 @@ class GroupSelectionTableViewCell: UITableViewCell {
     
     var groupSelectionLabel: UILabel = {
         let label = UILabel()
-//        label.text = "None"
         label.textColor = .white
         label.backgroundColor = .clear
         label.font = UIFont.systemFont(ofSize: 18)
@@ -23,7 +22,6 @@ class GroupSelectionTableViewCell: UITableViewCell {
     
     var groupSelectionImageView: UIImageView = {
         let iv = UIImageView()
-//        iv.image = UIImage(named: "Tick")
         iv.backgroundColor = .clear
         iv.setHeight(height: 25)
         iv.setWidth(width: 25)
@@ -31,11 +29,9 @@ class GroupSelectionTableViewCell: UITableViewCell {
         return iv
     }()
 
-    
     // MARK: - LifeCycle
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        print("DEGUG: ----------------------> Got here 1")
+    override init(style: UITableViewCell.CellStyle , reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
          configureUI()
@@ -56,6 +52,7 @@ class GroupSelectionTableViewCell: UITableViewCell {
         groupSelectionImageView.centerY(inView: self)
         groupSelectionImageView.anchor(right: self.rightAnchor, paddingRight: 12)
         
-        self.setHeight(height: 50)
+        self.backgroundColor = .black
+        self.selectionStyle = .none
     }
 }
