@@ -26,6 +26,9 @@
 		C4EDD29A251132CF00420FD8 /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDD299251132CF00420FD8 /* SearchResultsTableViewCell.swift */; };
 		C4EDD29C2511385D00420FD8 /* SearchResultsTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDD29B2511385D00420FD8 /* SearchResultsTV.swift */; };
 		C4EDD29E25113A2C00420FD8 /* SearchResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDD29D25113A2C00420FD8 /* SearchResultsVC.swift */; };
+		C4EDD2A0251264F200420FD8 /* LiftOfferReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDD29F251264F200420FD8 /* LiftOfferReviewVC.swift */; };
+		C4EDD2A22512720700420FD8 /* LiftOfferReviewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDD2A12512720700420FD8 /* LiftOfferReviewTVC.swift */; };
+		C4EDD2A425127F2700420FD8 /* LiftOfferAccepted.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDD2A325127F2700420FD8 /* LiftOfferAccepted.swift */; };
 		C4F184D92507D9B900E32E4B /* HomeTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184D82507D9B900E32E4B /* HomeTBC.swift */; };
 		C4F184DB2507DAC100E32E4B /* HomeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184DA2507DAC100E32E4B /* HomeTVC.swift */; };
 		C4F184DD2507DB1D00E32E4B /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F184DC2507DB1D00E32E4B /* GroupsVC.swift */; };
@@ -62,6 +65,9 @@
 		C4EDD299251132CF00420FD8 /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
 		C4EDD29B2511385D00420FD8 /* SearchResultsTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTV.swift; sourceTree = "<group>"; };
 		C4EDD29D25113A2C00420FD8 /* SearchResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsVC.swift; sourceTree = "<group>"; };
+		C4EDD29F251264F200420FD8 /* LiftOfferReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftOfferReviewVC.swift; sourceTree = "<group>"; };
+		C4EDD2A12512720700420FD8 /* LiftOfferReviewTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftOfferReviewTVC.swift; sourceTree = "<group>"; };
+		C4EDD2A325127F2700420FD8 /* LiftOfferAccepted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftOfferAccepted.swift; sourceTree = "<group>"; };
 		C4F184D82507D9B900E32E4B /* HomeTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTBC.swift; sourceTree = "<group>"; };
 		C4F184DA2507DAC100E32E4B /* HomeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTVC.swift; sourceTree = "<group>"; };
 		C4F184DC2507DB1D00E32E4B /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
@@ -148,6 +154,8 @@
 				C4F184E22507DB6100E32E4B /* MoreVC.swift */,
 				C4FE5550250BCEAD0000A48B /* FindALiftVC.swift */,
 				C4EDD29D25113A2C00420FD8 /* SearchResultsVC.swift */,
+				C4EDD29F251264F200420FD8 /* LiftOfferReviewVC.swift */,
+				C4EDD2A325127F2700420FD8 /* LiftOfferAccepted.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 				C4FE554E250BC4C20000A48B /* HomeTableViewCell.swift */,
 				C42CFAEA250FC97100EE1C9B /* GroupSelectionTableViewCell.swift */,
 				C4EDD299251132CF00420FD8 /* SearchResultsTableViewCell.swift */,
+				C4EDD2A12512720700420FD8 /* LiftOfferReviewTVC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -336,13 +345,16 @@
 				C42CFAEB250FC97100EE1C9B /* GroupSelectionTableViewCell.swift in Sources */,
 				C4EDD29C2511385D00420FD8 /* SearchResultsTV.swift in Sources */,
 				C46A813525067BB9009FBA5A /* Extensions.swift in Sources */,
+				C4EDD2A425127F2700420FD8 /* LiftOfferAccepted.swift in Sources */,
 				C4F184DB2507DAC100E32E4B /* HomeTVC.swift in Sources */,
 				C4F184E32507DB6100E32E4B /* MoreVC.swift in Sources */,
+				C4EDD2A0251264F200420FD8 /* LiftOfferReviewVC.swift in Sources */,
 				C46A813225067AE9009FBA5A /* LogInVC.swift in Sources */,
 				C4F184EE250AA44F00E32E4B /* FooterView.swift in Sources */,
 				C46A813925068EDB009FBA5A /* InputContainerView.swift in Sources */,
 				C46A81402506A3D2009FBA5A /* AuthService.swift in Sources */,
 				C42CFAED250FCC6200EE1C9B /* GroupSelectionTV.swift in Sources */,
+				C4EDD2A22512720700420FD8 /* LiftOfferReviewTVC.swift in Sources */,
 				C46A813725068E92009FBA5A /* CustomTextField.swift in Sources */,
 				C4FE5558250BEF4E0000A48B /* DateAndTimeSelectorView.swift in Sources */,
 				C4F184D92507D9B900E32E4B /* HomeTBC.swift in Sources */,

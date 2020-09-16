@@ -89,7 +89,6 @@ class FindALiftVC: UIViewController {
         view.addSubview(dateAndTime)
         dateAndTime.centerY(inView: view)
         dateAndTime.centerX(inView: view)
-        print("DEBUG: -------------------------> Got here 2")
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {

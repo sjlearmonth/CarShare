@@ -65,7 +65,6 @@ class FooterView: UIView {
     // MARK: - Selectors
     
     @objc func handleFindALift() {
-        print("DEBUG: Find A Lift Clicked ")
         delegate?.handleFindALift()
     }
     
